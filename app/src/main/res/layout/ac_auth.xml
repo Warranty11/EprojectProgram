@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(ниже)Cоздал LinearLayout в котором задал вертикальную ориентацию(orientation="vertical") для вывода полей ввода логина и пароля "с новой строки"
+    установил ширину (layout_height="match_parent") и высоту (layout_height="match_parent) LinearLayout максимальной по отношению к экрану родительского приложения-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/etLogin"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:hint="@string/login_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--(выше)Первая переменная EditText служит для строки ввода логина пользователем и запись в переменную etLogin
+        отступаем по 8dp с каждой стороны экрана(layout_marginRight="8dp" layout_marginLeft="8dp")
+        hint - контекстная подсказка для пользователя в поле ввода, видимая пока пальзователь не начал наполнять переменную EditTExt hint="@string/login_hint" (для сохранения строки в библиотеку ресурсов: указатель на текст+Alt+Entr->Extract String Resource->задаем узнаваемое имя, ok)
+        todo уточнить про функцию  layout_width layout_height id
+
+        (ниже) вторая переменная EditText для ввода пароля пользователем, записывает в переменную etPassword
+        hint - контекстная подсказка hint="@string/pass_hint"
+        отступаем по 8dp с каждой стороны экрана(layout_marginRight="8dp" layout_marginLeft="8dp")
+        -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:hint="@string/pass_hint"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"/>
+    <!--(ниже)Cоздал LinearLayout в котором задал горизонтальную ориентацию(orientation="vertical") для вывода кнопок в один ряд
+        (layout_height="match_parent")(layout_height="wrap_content") LinearLayout -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+       <!--(ниже)Cоздал кнопку <Button> для "входа" по нажатию которой будет производиться запись введенного пользователем текста в переменные etLogin и etPassword из полей логина и пароля и идентификация пользователя
+           (layout_height="match_parent")(layout_height="wrap_content") LinearLayout
+           layout_weight="1" задает вес кнопки. пропорции весов определяют горизонтальную длину кнопки-->
+       <Button
+           android:text="@string/login_entr"
+           android:id="@+id/buttonEnter"
+           android:layout_weight="1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+       <!--(ниже)Cоздал кнопку <Button> для "регистрации" по нажатию которой будет производиться запись введенного пользователем текста в переменные etLogin и etPassword из полей логина и пароля и открывает новое окно
+           (layout_height="match_parent")(layout_height="wrap_content") LinearLayout
+           задал кнопкам одинаковый вес для симметричного отображения layout_weight="1"-->
+       <Button
+           android:text="@string/login_registr"
+           android:id="@+id/buttonRegister"
+           android:layout_weight="1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+
+   </LinearLayout>
+
+</LinearLayout>
